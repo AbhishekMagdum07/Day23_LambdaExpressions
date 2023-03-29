@@ -53,5 +53,14 @@ public class UserRagistration {
             throw new InvalidUserInputException("Enter valid Password");
         }
     }
+    public boolean allEmails(String email) {
+        Pattern pattern = Pattern.compile("^[a-z][a-z0-9-.+]*@[a-z0-9]*[.][a-z.]*$");
+        Matcher matcher = pattern.matcher(email);
+        if (matcher.find() == true) {
+            return matcher.matches();
+        } else {
+            throw new InvalidUserInputException("Enter valid Password");
+        }
+    }
 }
 
