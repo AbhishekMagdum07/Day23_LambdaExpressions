@@ -15,4 +15,13 @@ class UserRagistrationTest {
             System.out.println(e);
         }
     }
+    @Test
+    void lastName() {
+        try {
+            boolean output = user.lastName("magdum");
+            assertEquals(true, output);
+        } catch (InvalidUserInputException e) {
+            System.out.println(e);
+        }
+    }
 }

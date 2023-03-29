@@ -13,5 +13,15 @@ public class UserRagistration {
             throw new InvalidUserInputException("Enter valid First Name"); // throw exception if conditioon is false.
         }
     }
+    // Uc2 = As a User need to enter a valid Last Name = Last name starts with Cap and has minimum 3 characters
+    public boolean lastName(String lastName) {
+        Pattern pattern = Pattern.compile("^[A-Z][a-zA-Z]{2,}$");
+        Matcher matcher = pattern.matcher(lastName);
+        if (matcher.find() == true) {
+            return matcher.matches();      // passing to test cases if condition is true.
+        } else {
+            throw new InvalidUserInputException("Enter valid Last Name"); // throw exception if conditioon is false.
+        }
+    }
 }
 
