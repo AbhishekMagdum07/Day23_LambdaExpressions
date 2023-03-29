@@ -9,7 +9,7 @@ class UserRagistrationTest {
     @Test
     void firstName(){
         try {
-            boolean output = user.firstName("abhi");
+            boolean output = user.firstName("Abhishek");
             assertEquals(true, output);
         } catch (InvalidUserInputException e) {      // handling exception here if test case failed.
             System.out.println(e);
