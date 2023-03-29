@@ -1,6 +1,8 @@
 package com.exception_handling;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,10 +53,12 @@ class UserRagistrationTest {
             System.out.println(e);
         }
     }
-    @Test
-    void allEmails() {
+    @ParameterizedTest
+    @ValueSource(strings = {"abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net",
+            "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"})
+    void allEmails(String emails) {
         try {
-            boolean output = user.allEmails("abc-100@yahoo.com");
+            boolean output = user.allEmails(emails);
             assertEquals(true, output);
         } catch (InvalidUserInputException e) {
             System.out.println(e);
