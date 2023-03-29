@@ -18,7 +18,7 @@ class UserRagistrationTest {
     @Test
     void lastName() {
         try {
-            boolean output = user.lastName("magdum");
+            boolean output = user.lastName("Magdum");
             assertEquals(true, output);
         } catch (InvalidUserInputException e) {
             System.out.println(e);
@@ -28,6 +28,15 @@ class UserRagistrationTest {
     void validEmail() {
         try {
             boolean output = user.validEmail("abhishek.magdum.07@gmail.com");
+            assertEquals(true, output);
+        } catch (InvalidUserInputException e) {
+            System.out.println(e);
+        }
+    }
+    @Test
+    void phoneNumber() {
+        try {
+            boolean output = user.phoneNumber("+91 7066987376");
             assertEquals(true, output);
         } catch (InvalidUserInputException e) {
             System.out.println(e);

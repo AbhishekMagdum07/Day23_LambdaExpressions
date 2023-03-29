@@ -34,5 +34,15 @@ public class UserRagistration {
             throw new InvalidUserInputException("Enter valid Email Address"); // throw exception if conditioon is false.
         }
     }
+    //  As a User need to follow pre -define Mobile format
+    public boolean phoneNumber(String phoneNumber) {
+        Pattern pattern = Pattern.compile("^[+]\\d{2} \\d{10}$");
+        Matcher matcher = pattern.matcher(phoneNumber);
+        if (matcher.find() == true) {
+            return matcher.matches();
+        } else {
+            throw new InvalidUserInputException("Enter valid Phone Number");
+        }
+    }
 }
 
