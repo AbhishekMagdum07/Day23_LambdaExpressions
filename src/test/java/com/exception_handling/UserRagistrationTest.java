@@ -24,4 +24,13 @@ class UserRagistrationTest {
             System.out.println(e);
         }
     }
+    @Test
+    void validEmail() {
+        try {
+            boolean output = user.validEmail("abhishek.magdum.07@gmail.com");
+            assertEquals(true, output);
+        } catch (InvalidUserInputException e) {
+            System.out.println(e);
+        }
+    }
 }
