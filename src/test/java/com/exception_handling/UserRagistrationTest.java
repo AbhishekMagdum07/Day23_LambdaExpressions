@@ -42,4 +42,13 @@ class UserRagistrationTest {
             System.out.println(e);
         }
     }
+    @Test
+    void password() {
+        try {
+            boolean output = user.password("Abhi@1234");
+            assertEquals(true, output);
+        } catch (InvalidUserInputException e) {
+            System.out.println(e);
+        }
+    }
 }

@@ -44,5 +44,14 @@ public class UserRagistration {
             throw new InvalidUserInputException("Enter valid Phone Number");
         }
     }
+    public boolean password(String password){
+        Pattern pattern = Pattern.compile("(?=.*[A-Z])(?=.*[\\d])(?=.*[\\W])[\\w\\W]{8,}");
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.find() == true) {
+            return matcher.matches();
+        } else {
+            throw new InvalidUserInputException("Enter valid Password");
+        }
+    }
 }
 
