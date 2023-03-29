@@ -51,4 +51,13 @@ class UserRagistrationTest {
             System.out.println(e);
         }
     }
+    @Test
+    void allEmails() {
+        try {
+            boolean output = user.password("abc-100@yahoo.com");
+            assertEquals(true, output);
+        } catch (InvalidUserInputException e) {
+            System.out.println(e);
+        }
+    }
 }
