@@ -59,7 +59,7 @@ public class UserRagistration {
         if (matcher.find() == true) {
             return matcher.matches();
         } else {
-            throw new InvalidUserInputException("Enter valid Password");
+            throw new InvalidUserInputException("Enter valid Email");
         }
     }
 }
